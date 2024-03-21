@@ -6,15 +6,34 @@
         <title>Dennis's Fears</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/css/dennis.css">	
     </head>
     <body>
-        <h1>Scary</h1><!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <h1>Scary</h1>
         
-        <script src="" async defer></script>
+        <button onclick="showRandomImage()">Click here to find out!</button>
+        <div id="imageContainer"></div>
+        <div id="descriptionContainer"></div>
+        
+        <script>
+            function showRandomImage() {
+                var images = [
+                    "/images/image1.jpg",
+                    "/images/image2.jpg",
+                    "/images/image3.jpg"
+                ];
+                
+                var randomIndex = Math.floor(Math.random() * images.length);
+                var randomImage = images[randomIndex];
+                
+                var imageElement = document.createElement("img");
+                imageElement.src = randomImage;
+                document.getElementById("imageContainer").appendChild(imageElement);
+                
+                var descriptionElement = document.createElement("p");
+                descriptionElement.textContent = "Description goes here";
+                document.getElementById("descriptionContainer").appendChild(descriptionElement);
+            }
+        </script>
     </body>
 </html>
