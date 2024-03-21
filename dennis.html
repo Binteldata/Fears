@@ -17,6 +17,17 @@
         
         <script>
             function showRandomImage() {
+                var imageContainer = document.getElementById("imageContainer");
+                var descriptionContainer = document.getElementById("descriptionContainer");
+                
+                // Remove old outputs
+                while (imageContainer.firstChild) {
+                    imageContainer.removeChild(imageContainer.firstChild);
+                }
+                while (descriptionContainer.firstChild) {
+                    descriptionContainer.removeChild(descriptionContainer.firstChild);
+                }
+                
                 var images = [
                     "/images/image1.jpg",
                     "/images/image2.jpg",
@@ -28,11 +39,11 @@
                 
                 var imageElement = document.createElement("img");
                 imageElement.src = randomImage;
-                document.getElementById("imageContainer").appendChild(imageElement);
+                imageContainer.appendChild(imageElement);
                 
                 var descriptionElement = document.createElement("p");
                 descriptionElement.textContent = "Description goes here";
-                document.getElementById("descriptionContainer").appendChild(descriptionElement);
+                descriptionContainer.appendChild(descriptionElement);
             }
         </script>
     </body>
