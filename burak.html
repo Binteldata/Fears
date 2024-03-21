@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/burak.css">
+    <style>
+        /* Hier fügen wir das Hintergrundbild hinzu und machen es transparent */
+        body {
+          background-image: url('./images/ocean.jpg'); 
+          background-size: cover; 
+          background-attachment: fixed; 
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      </style>
 </head>
 <body>
     <Section>
-        <article>
+        <article class="text_background">
             <h1>
-                My biggest fears:
+                My biggest fears: The Ocean
             </h1>
-            <ol>
-                <li>Ocean</li>
-                <li>Height</li>
-            </ol>
         </article>
-        <article>
+        <article class="text_background">
             <h2>Why do I hate the Ocean so much and what exactly do I hate?</h2>
             <p>I hate the Ocean, not the living beings inside, not water or something else related to the ocean.</p>
             <p>I just really cant deal with the feelings I have, when Im in the ocean.</p>
@@ -28,5 +33,13 @@
             </p>
         </article>
     </Section>
+    <section>
+        <article>
+            <h2 class="text_background">NOPE</h2>
+            <img src="./images/drowing.jpg" alt="drowing" class="img_burak">
+            <img src="./images/shark.jpg" alt="shark" class="img_burak">
+            <img src="./images/shipwreck.jpg" alt="shipwreck" class="img_burak">
+        </article>
+    </section>
 </body>
 </html>
