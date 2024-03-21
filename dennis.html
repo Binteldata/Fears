@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="/css/dennis.css">	
     </head>
     <body>
-        <h1>Scary</h1>
+        <p><h1>Scary</h1></p>
+        <p>There's a lot that scares me, too much to actually be able to type out here in this short time, but if you're interested you can click the button and see what scares me at the moment</p>
         
         <button onclick="showRandomImage()">Click here to find out!</button>
         <div id="imageContainer"></div>
@@ -29,21 +30,21 @@
                 }
                 
                 var images = [
-                    "/images/image1.jpg",
-                    "/images/image2.jpg",
-                    "/images/image3.jpg"
-                ];
-                
-                var randomIndex = Math.floor(Math.random() * images.length);
-                var randomImage = images[randomIndex];
-                
-                var imageElement = document.createElement("img");
-                imageElement.src = randomImage;
-                imageContainer.appendChild(imageElement);
-                
-                var descriptionElement = document.createElement("p");
-                descriptionElement.textContent = "Description goes here";
-                descriptionContainer.appendChild(descriptionElement);
+                {src: "/images/developer.jpg", description: "Getting a job after this course, or in general as a junior developer. It seems like these days you need to have a lot of experience to get a job, but how can you get experience if you can't get a job?"},
+                {src: "/images/spider.webp", description: "Spiders are scary, sometimes cute, but generally I get creeped out by them. However, I know how much they help keep other insects in check, so I can't be too mad at them (but they're still scary)"},
+                {src: "/images/finanzamt.jpg", description: "Finanzamt, I don't think this needs any more explanation. It's the tax office, and they're always looking for money, even if you don't have any. It's a scary place to be, especially if you're not good with numbers"},
+            ];
+            
+            var randomIndex = Math.floor(Math.random() * images.length);
+            var randomImage = images[randomIndex];
+            
+            var imageElement = document.createElement("img");
+            imageElement.src = randomImage.src;
+            imageContainer.appendChild(imageElement);
+            
+            var descriptionElement = document.createElement("p");
+            descriptionElement.textContent = randomImage.description;
+            descriptionContainer.appendChild(descriptionElement);
             }
         </script>
     </body>
